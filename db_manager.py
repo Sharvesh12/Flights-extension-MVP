@@ -6,6 +6,8 @@ from config import logging
 import psycopg2
 import pandas as pd
 import os
+from datetime import date
+from dateutil.relativedelta import relativedelta
 logger = logging.getLogger(__name__)
 
 class DBManager:
