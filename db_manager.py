@@ -3,11 +3,12 @@ import sqlalchemy
 from sqlalchemy.pool import NullPool
 from sqlalchemy.engine import url as sa_url
 from config import logging
-import psycopg2
 import pandas as pd
 import os
 from datetime import date
 from dateutil.relativedelta import relativedelta
+from urllib.parse import quote_plus
+from sqlalchemy import create_engine
 logger = logging.getLogger(__name__)
 
 class DBManager:
@@ -21,14 +22,13 @@ class DBManager:
         # password=credentials['password'])
         # logger.info(self.connect_url)
         # logger.info('CONNECTED')
-        connect_url= sa_url.URL( drivername='postgresql',
-        host=credentials['host'], 
-        database=credentials['database'], 
-        username=credentials['username'],
-        password=credentials['password'])
-        logger.info(connect_url)
-        self.connection=sqlalchemy.create_engine(
-            connect_url, poolclass=NullPool).connect()
+        port=credentials['port']
+        host=credentials['host']
+        database=credentials['database']
+        username=credentials['username']
+        password=quote_plus(credentials['password'])
+        logger.info(password)
+        self.connection=engine = create_engine(f'postgresql://postgres:{password}@{host}:{port}/{database}')
         logger.info('CONNECTED')        
 
     def run_query(self, query_file_name:str, params=None) -> pd.DataFrame:
