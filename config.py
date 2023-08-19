@@ -10,9 +10,9 @@ logger=logging.getLogger(__name__)
 #API headers
 
 params={
-'api_key' :'64d8ff40c4386061ed958548', 
-'departure_airport_code': ['BER','FRA','MUC','DUS'],
-'arrival_airport_code':['DEL','BOM','BLR','HYD','MAA','CCU'], 
+'api_key' :'64e0be0b7bb78fb3c7a1de25', 
+'departure_airport_code': ['BER','FRA','MUC'],
+'arrival_airport_code':['DEL','BOM','BLR','HYD','MAA'], 
 'departureDate': None, 
 'arrival_date': None, 
 'number_of_adults': '1', 
