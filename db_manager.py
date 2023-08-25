@@ -27,7 +27,6 @@ class DBManager:
         database=credentials['database']
         username=credentials['username']
         password=quote_plus(credentials['password'])
-        logger.info(password)
         self.connection=engine = create_engine(f'postgresql://postgres:{password}@{host}:{port}/{database}')
         logger.info('CONNECTED')        
 
