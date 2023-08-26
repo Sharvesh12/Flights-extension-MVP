@@ -1,0 +1,15 @@
+name : Trigger Flights Alert Job on CRON Schedule
+
+on:
+   schedule:
+       #Runs At 08:00 everyday
+       - cron: '0 8 * * 0-6'
+
+jobs:
+  build:
+     name: Trigger Code Checkout
+     runs-on: ubuntu-latest
+     # Steps represent a sequence of tasts that will be executed as a part of the job
+     steps:
+        #checkout your repository under the $GITHUB_WORKSPACE, so you job can access it
+        - uses: actions/checkout@v3
