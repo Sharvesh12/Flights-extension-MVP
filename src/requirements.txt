@@ -4,7 +4,7 @@ pandas
 
 # time manipulation
 datetime
-dateutil.relativedelta
+python-dateutil==2.8.2
 
 # SQL
 sqlalchemy
