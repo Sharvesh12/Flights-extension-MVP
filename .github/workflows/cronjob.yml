@@ -1,5 +1,5 @@
 name : Trigger Flights Alert Job on CRON Schedule
-
+run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
 on: [push]
 
 jobs:
