@@ -28,3 +28,4 @@ jobs:
     - name: Run notebook
       run: |
         jupyter nbconvert --to html --execute flights_alerts.ipynb
+        
