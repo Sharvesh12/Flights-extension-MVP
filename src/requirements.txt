@@ -7,3 +7,6 @@ datetime
 
 #SQL
 sqlalchemy
+
+#Utilities
+requests
