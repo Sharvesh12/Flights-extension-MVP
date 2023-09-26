@@ -1,7 +1,6 @@
 # Base Dependencies
 numpy
 pandas
-os
 
 # time manipulation
 datetime
