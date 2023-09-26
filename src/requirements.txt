@@ -1,0 +1,10 @@
+#Base Dependencies
+pandas
+numpy
+
+#datetime
+datetime
+python-dateutil==2.8.2
+
+#SQL
+sqlalchemy
