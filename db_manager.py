@@ -21,7 +21,7 @@ class DBManager:
         database=credentials['database']
         username=credentials['username']
         password=quote_plus(credentials['password'])
-        engine=create_engine(f'postgresql://{username}:{password}@{host}:{port}/{database}')
+        engine=create_engine(url=f'postgresql://{username}:{password}@{host}:{port}/{database}',schema='public')
         logger.info('CONNECTED')        
 
     def run_query(self, query_file_name:str, params=None) -> pd.DataFrame:
