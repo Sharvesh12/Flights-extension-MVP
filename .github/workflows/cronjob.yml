@@ -1,22 +1,19 @@
-name : Trigger Flights Alert Job on CRON Schedule
+name: Trigger Flights Alert Job on CRON Schedule
 run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
 on: [push]
 
 jobs:
-
   run-notebook:
-
     runs-on: ubuntu-latest
 
     steps:
-    
     - uses: actions/checkout@v2
 
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
         python-version: 3.7
-        
+
     - name: Install dependencies
       run: |
         pip install -r src/requirements.txt
@@ -24,9 +21,7 @@ jobs:
     - name: Install Jupyter
       run: |
         pip install jupyter
-        
-        
+
     - name: Run notebook
       run: |
         jupyter nbconvert --to html --execute flights_alerts.ipynb
-        
