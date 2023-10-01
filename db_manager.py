@@ -21,7 +21,7 @@ class DBManager:
         database=credentials['database']
         username=credentials['username']
         password=quote_plus(credentials['password'])
-        self.connection=create_engine(url=f'postgresql://{username}:{password}@{host}:{port}/{database}',schema='public')
+        self.connection=create_engine(url=f'postgresql://{username}:{password}@{host}:{port}/{database}')
         logger.info('CONNECTED')        
 
     def run_query(self, query_file_name:str, params=None) -> pd.DataFrame:
@@ -56,5 +56,5 @@ class DBManager:
         :param query_file_name: pandas dataframe supposed to be written to DB table
         :return: void
         '''
-        df.to_sql(table_name,con=self.connection, index=False, if_exists='append')
+        df.to_sql(table_name,con=self.connection, index=False, if_exists='append',schema='public')
         logger.info(f'Dumped to DB')
