@@ -1,22 +1,26 @@
-name : Trigger Flights Alert Job on CRON Schedule
+name: Trigger Flights Alert Job on CRON Schedule
 run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
 on: [push]
 
 jobs:
-
   run-notebook:
-
     runs-on: ubuntu-latest
 
     steps:
-    
     - uses: actions/checkout@v2
 
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
         python-version: 3.9
-        
+
+    - name: Install Anaconda
+      run: |
+        ANACONDA_VERSION=3   # Specify the Anaconda version you want
+        wget https://repo.anaconda.com/archive/Anaconda$ANACONDA_VERSION-2021.05-Linux-x86_64.sh -O anaconda.sh
+        bash anaconda.sh -b -p $HOME/anaconda
+        export PATH="$HOME/anaconda/bin:$PATH"
+
     - name: Install dependencies
       run: |
         pip install -r src/requirements.txt
@@ -24,9 +28,7 @@ jobs:
     - name: Install Jupyter
       run: |
         pip install jupyter
-        
-        
+
     - name: Run notebook
       run: |
         jupyter nbconvert --to html --execute flights_alerts.ipynb
-        
