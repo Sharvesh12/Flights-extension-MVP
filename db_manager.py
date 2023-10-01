@@ -56,5 +56,5 @@ class DBManager:
         :param query_file_name: pandas dataframe supposed to be written to DB table
         :return: void
         '''
-        df.to_sql(table_name,con=self.connection, index=False, if_exists='append',schema='public')
+        df.to_sql(table_name,con=self.connection, index=False, if_exists='append')
         logger.info(f'Dumped to DB')
