@@ -20,7 +20,7 @@ jobs:
 
     - name: Install Jupyter
       run: |
-        pip install jupyter==6.4.5
+        pip install jupyter==6.4
 
     - name: Run notebook
       run: |
