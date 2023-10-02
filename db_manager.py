@@ -15,7 +15,7 @@ class DBManager:
         
         self.connection = psycopg2.connect(
             host=credentials['host'],
-            port=credentials['port']
+            port=credentials['port'],
             database=credentials['database'], 
             user=credentials['username'],
             password=credentials['password']
