@@ -2,6 +2,7 @@ import config
 import sqlalchemy
 from sqlalchemy.pool import NullPool
 from sqlalchemy.engine import url as sa_url
+from sqlalchemy import MetaData
 from config import logging
 import pandas as pd
 import os
@@ -21,7 +22,8 @@ class DBManager:
         database=credentials['database']
         username=credentials['username']
         password=quote_plus(credentials['password'])
-        self.connection=create_engine(f'postgresql://{username}:{password}@{host}:{port}/{database}')
+        metadata = MetaData(schema="public")
+        self.connection=create_engine(f'postgresql://{username}:{password}@{host}:{port}/{database}', metadata=metadata)
         logger.info('CONNECTED')        
 
     def run_query(self, query_file_name:str, params=None) -> pd.DataFrame:
