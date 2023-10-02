@@ -18,8 +18,7 @@ class DBManager:
             port=credentials['port'],
             database=credentials['database'], 
             user=credentials['username'],
-            password=credentials['password']
-
+            password=quote_plus(credentials['password'])
         )
         
         print('Connected!')
