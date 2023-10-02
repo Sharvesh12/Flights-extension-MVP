@@ -49,5 +49,5 @@ pg_credentials={
     'port':5433,
     'database':'postgres',
     'username':'postgres',
-    'password':'Keerthana@123'
+    'password':'ramvikash123'
 }
