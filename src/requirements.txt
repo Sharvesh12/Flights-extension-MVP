@@ -1,12 +1,12 @@
 #Base Dependencies
-pandas==1.3.3
+pandas
 numpy
 
 #datetime
 datetime
 
 #SQL
-SQLAlchemy==2.0.0
+sqlalchemy
 psycopg2
 
 #Utilities
