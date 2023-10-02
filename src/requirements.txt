@@ -6,7 +6,6 @@ numpy
 datetime
 
 #SQL
-sqlalchemy
 psycopg2
 
 #Utilities
