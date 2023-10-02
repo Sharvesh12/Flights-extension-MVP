@@ -23,7 +23,7 @@ jobs:
 
     - name: Install Jupyter Notebook
       run: |
-        pip install jupyter==<desired_version>
+        pip install jupyter
 
     - name: Run notebook
       run: |
