@@ -1,5 +1,5 @@
 #Base Dependencies
-pandas==1.5
+pandas
 numpy
 
 #datetime
