@@ -6,7 +6,7 @@ numpy
 datetime
 
 #SQL
-sqlalchemy==1.4.46
+sqlalchemy
 psycopg2
 
 #Utilities
