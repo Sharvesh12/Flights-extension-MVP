@@ -12,15 +12,14 @@ import pandas as pd
 class DBManager:
      
     def __init__(self, credentials):
-        quoted_password=quote_plus(credentials['password'])
         self.connection = psycopg2.connect(
             host=credentials['host'],
             port=credentials['port'],
             database=credentials['database'], 
             user=credentials['username'],
-            password=quoted_password
+            password=quote_plus(credentials['password']),
+            quoting=psycopg2.QUOTE_ALL
         )
-        
         print('Connected!')
         
     def run_query(self, query):
