@@ -10,15 +10,15 @@ import psycopg2
 import pandas as pd
 
 class DBManager:
-
+     
     def __init__(self, credentials):
-        
+        quoted_password=quote_plus(credentials['password'])
         self.connection = psycopg2.connect(
             host=credentials['host'],
             port=credentials['port'],
             database=credentials['database'], 
             user=credentials['username'],
-            password=quote_plus(credentials['password'])
+            password=quoted_password
         )
         
         print('Connected!')
