@@ -22,14 +22,12 @@ jobs:
       run: | 
         wget https://github.com/pandas-dev/pandas/releases/download/v2.1.1/pandas-2.1.1.tar.gz
     
-    - name: Extract pandas source
+    - name: Install pandas 
       run: |
         tar -xzf pandas-2.1.1.tar.gz
-        
-    - name: Install pandas
-      run: | 
         cd pandas-2.1.1
-        python -m pip install .
+        pip install ./wheelhouse/*.whl
+        
     - name: Install Jupyter Notebook
       run: |
         pip install jupyter
