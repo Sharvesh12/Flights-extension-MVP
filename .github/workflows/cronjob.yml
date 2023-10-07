@@ -17,12 +17,12 @@ jobs:
     - name: Upgrade pip
       run:  python -m pip install --upgrade pip
 
-    - name: Install latest pandas
-      run: |
-        pip install git+https://github.com/pandas-dev/pandas.git
     - name: Install dependencies
       run: |
         pip install -r requirements.txt
+    - name: Install latest pandas
+      run: |
+        pip install git+https://github.com/pandas-dev/pandas.git
 
     - name: Install Jupyter Notebook
       run: |
