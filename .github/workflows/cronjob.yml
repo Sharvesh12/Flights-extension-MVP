@@ -18,11 +18,18 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt
-    - name: Install latest pandas 
+    - name: Download pandas source
       run: | 
-        pip install --upgrade pip
-        python -c "import re; import requests; print(re.search('<a.*?>(pandas-.*?)<', requests.get('https://github.com/pandas-dev/pandas/releases/latest').text).group(1)" > release.txt
-        pip install --no-deps https://github.com/pandas-dev/pandas/releases/download/v2.1.1/$(cat release.txt)
+        wget https://github.com/pandas-dev/pandas/releases/download/v2.1.1/pandas-2.1.1.tar.gz
+    
+    - name: Extract pandas source
+      run: |
+        tar -xzf pandas-2.1.1.tar.gz
+        
+    - name: Install pandas
+      run: | 
+        cd pandas-2.1.1
+        python -m pip install .
     - name: Install Jupyter Notebook
       run: |
         pip install jupyter
