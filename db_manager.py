@@ -2,6 +2,8 @@ import config
 import sqlalchemy
 from sqlalchemy.pool import NullPool
 from sqlalchemy.engine import url as sa_url
+from sqlalchemy.exc import OperationalError
+from sqlalchemy.orm import sessionmaker
 from config import logging
 import pandas as pd
 import os
@@ -23,6 +25,17 @@ class DBManager:
         password=quote_plus(credentials['password'])
         self.connection=create_engine(f'postgresql://{username}:{password}@{host}:{port}/{database}')
         logger.info('CONNECTED')        
+        try:
+            # Attempt a database operation
+            Session = sessionmaker(bind=self.connection)
+            session = Session()
+            # ... your database operations here ...
+        except OperationalError as e:
+            # Handle the OperationalError
+            print("OperationalError:", e)
+            # You can choose to retry the operation or take appropriate action
+        finally:
+            session.close()
 
     def run_query(self, query_file_name:str, params=None) -> pd.DataFrame:
         '''
