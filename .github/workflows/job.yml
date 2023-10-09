@@ -24,6 +24,7 @@ jobs:
         run: sudo systemctl start postgresql        
       - name: Check PostgreSQL Server Status
         run: systemctl status postgresql
+        
 
       - name: Check PostgreSQL Connection
         run: |
