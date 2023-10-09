@@ -33,6 +33,7 @@ jobs:
           PG_PORT="5433"
           PG_USER="postgres"
           PG_PASSWORD="ramvikash123"
+          PG_DATABASE="postgres"
           
           
           # Attempt to connect to PostgreSQL
