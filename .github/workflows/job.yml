@@ -34,5 +34,6 @@ jobs:
           PG_USER="postgres"
           PG_PASSWORD="ramvikash123"
           
+          
           # Attempt to connect to PostgreSQL
           python -c "import psycopg2; conn = psycopg2.connect(host='$PG_HOST', port='$PG_PORT', user='$PG_USER', password='$PG_PASSWORD'); conn.close()"
