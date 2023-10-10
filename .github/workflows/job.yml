@@ -30,7 +30,7 @@ jobs:
       - name: Check PostgreSQL Connection
         run: |
           # Replace these placeholders with your PostgreSQL server details
-          PG_HOST="127.0.0.1"
+          PG_HOST="*"
           PG_PORT="5433"
           PG_USER="postgres"
           PG_PASSWORD="ramvikash123"
