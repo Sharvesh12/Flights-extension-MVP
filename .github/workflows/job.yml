@@ -35,7 +35,6 @@ jobs:
           PG_PASSWORD="ramvikash123"
           PG_DATABASE="postgres"
 
-
           
           
           # Attempt to connect to PostgreSQL
