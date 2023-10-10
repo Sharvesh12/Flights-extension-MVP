@@ -27,7 +27,6 @@ jobs:
 
         
 
-
       - name: Check PostgreSQL Connection
         run: |
           # Replace these placeholders with your PostgreSQL server details
