@@ -27,17 +27,6 @@ jobs:
 
         
 
-      - name: Check PostgreSQL Connection
+      - name: Connect to PostgreSQL
         run: |
-          # Replace these placeholders with your PostgreSQL server details
-          PG_HOST="*"
-          PG_PORT="5433"
-          PG_USER="postgres"
-          PG_PASSWORD="ramvikash123"
-          PG_DATABASE="postgres"
-
-          
-
-          
-          # Attempt to connect to PostgreSQL
-          python -c "import psycopg2; conn = psycopg2.connect(host='$PG_HOST', port='$PG_PORT', user='$PG_USER', password='$PG_PASSWORD'); conn.close()"
+         psql -h localhost -p 5433 -d postgres -U postgres -W ramvikash123
