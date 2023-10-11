@@ -28,4 +28,4 @@ jobs:
 
       - name: Connect to PostgreSQL
         run: |
-         psql -h localhost -p 5433 -d postgres -U postgres -W ramvikash123
+         psycopg2 -h localhost -p 5433 -d postgres -U postgres -W ramvikash123
