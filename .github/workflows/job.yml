@@ -33,15 +33,6 @@ jobs:
           POSTGRES_DB: ${{ secrets.POSTGRES_DB }}
           POSTGRES_USER: ${{ secrets.POSTGRES_USER }}
           POSTGRES_PASSWORD: ${{ secrets.POSTGRES_PASSWORD }}
-        run: |
-         import psycopg2
-         conn = psycopg2.connect(
-             host="$POSTGRES_HOST",
-             port="$POSTGRES_PORT",
-             database="$POSTGRES_DB",
-             user="$POSTGRES_USER",
-             password="$POSTGRES_PASSWORD"
-          )
-         # Add code to interact with database
-         conn.close()
+          run: |
+           psql -h ${{ secrets.POSTGRES_HOST }} -p {{ secrets.POSTGRES_PORT }} -U ${{ secrets.POSTGRES_USER }} -d ${{ secrets.POSTGRES_PASSWORD }} -c "SELECT version();"
          
