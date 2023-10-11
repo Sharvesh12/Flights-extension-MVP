@@ -28,4 +28,13 @@ jobs:
 
       - name: Connect to PostgreSQL
         run: |
-         psycopg2 -h localhost -p 5433 -d postgres -U postgres -W ramvikash123
+         import psycopg2
+         conn = psycopg2.connect(
+             host="$POSTGRES_HOST",
+             port="$POSTGRES_PORT",
+             database="$POSTGRES_DB",
+             user="$POSTGRES_USER",
+             password="$POSTGRES_PASSWORD"
+          )
+         # Add code to interact with database
+         conn.close()
