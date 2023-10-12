@@ -38,8 +38,7 @@ params={
     'infants':None,
     'travelClass':None,
     'currencyCode':'EUR',
-    'maxPrice' : None
-    }
+    'maxPrice' : None   }
 #working directory
 working_dir=os.getcwd()
 
