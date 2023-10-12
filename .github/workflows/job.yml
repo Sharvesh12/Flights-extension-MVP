@@ -1,7 +1,6 @@
 name: Test PostgreSQL Connection
 
 
-
 on:
   push:
     branches:
