@@ -28,5 +28,9 @@ jobs:
           POSTGRES_USER: ${{ secrets.POSTGRES_USER }}
           POSTGRES_PASSWORD: ${{ secrets.POSTGRES_PASSWORD }}
         run: |
-           psql -h ${{ secrets.POSTGRES_HOST }} -p ${{ secrets.POSTGRES_PORT }} -U ${{ secrets.POSTGRES_USER }} -d ${{ secrets.POSTGRES_PASSWORD }}
+         psql -h ${{ secrets.POSTGRES_HOST }}  
+              -p ${{ secrets.POSTGRES_PORT }}
+              -U ${{ secrets.POSTGRES_USER }}
+              -d ${{ secrets.POSTGRES_DB }}
+              -W ${{ secrets.POSTGRES_PASSWORD }}
 
