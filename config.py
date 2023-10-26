@@ -25,6 +25,7 @@ data = {
 
 #url API flight offers call
 url= 'https://test.api.amadeus.com/v2/shopping/flight-offers'
+url_price='https://test.api.amadeus.com/v2/shopping/flight-offers/pricing'
 client_id = 'gmcFxx6JbsPXgRkVtJiltC3C1LBeOEog'
 client_secret = 'rrqmz3JmvqaAFcGY'
 
