@@ -30,7 +30,7 @@ client_id = 'gmcFxx6JbsPXgRkVtJiltC3C1LBeOEog'
 client_secret = 'rrqmz3JmvqaAFcGY'
 
 params={
-    'originLocationCode': ['BER','FRA'],
+    'originLocationCode': ['BER','FRA','MUC'],
     'destinationLocationCode':['DEL','BOM','BLR','MAA'], 
     'departureDate': '2023-10-01', 
     'returnDate' : None,
