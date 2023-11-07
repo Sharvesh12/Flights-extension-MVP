@@ -6,6 +6,7 @@ from sqlalchemy.exc import OperationalError
 from sqlalchemy.orm import sessionmaker
 from config import logging
 import pandas as pd
+import gspread
 import os
 from datetime import date
 from dateutil.relativedelta import relativedelta
@@ -71,3 +72,4 @@ class DBManager:
         '''
         df.to_sql(name=table_name,con=self.connection, index=False, if_exists='append')
         logger.info(f'Dumped to DB')
+
