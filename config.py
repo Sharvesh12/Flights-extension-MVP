@@ -46,7 +46,7 @@ working_dir=os.getcwd()
 #DB
 pg_credentials={
     'host':'localhost',
-    'port':5433,
+    'port':5432,
     'database':'postgres',
     'username':'postgres',
     'password':'ramvikash123'
